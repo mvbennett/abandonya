@@ -1,5 +1,6 @@
 class HousesController < ApplicationController
   def index
+    @hosue = House.all
   end
 
   def show
