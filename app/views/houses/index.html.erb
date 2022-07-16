@@ -1,2 +1,7 @@
 <h1>Houses#index</h1>
 <p>Find me in app/views/houses/index.html.erb</p>
+<%= @houses.each do |house| %>
+  <%= house.name %>
+    <%= house.address %>
+    <%= house.haunted %>
+<% end %>
