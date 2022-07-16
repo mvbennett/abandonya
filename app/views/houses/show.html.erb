@@ -1,2 +1,16 @@
-<h1>Houses#show</h1>
-<p>Find me in app/views/houses/show.html.erb</p>
+<%=h1>Spoopy Houses</h1%>
+
+<div class="house-card">
+  <ul>
+  <li>
+    <%= @house.name %>
+  </li>
+  <li>
+   <%= @house.address %>
+  </li>
+  <li>
+    <%= @house.haunted %>
+  </li>
+  </ul>
+  <%= link_to "Go back", houses_path %>
+</div>
