@@ -12,5 +12,13 @@
     <%= @house.haunted %>
   </li>
   </ul>
+  <h3>
+    Please enter your preferred dates:
+  </h3>
+  <%= simple_form_for [@house, @booking] do |f| %>
+    <%= f.input :start_time, as: :date, html5: true %>
+    <%= f.input :end_time, as: :date, html5: true %>
+    <%= f.submit %>
+  <% end %>
   <%= link_to "Go back", houses_path %>
 </div>
