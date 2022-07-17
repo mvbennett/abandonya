@@ -20,7 +20,8 @@ class BookingsController < ApplicationController
     user = current_user
     booking = Booking.new(booking_params)
     booking.house = house
-    booking.user = user
+    booking.renter = user
+    booking.lender = house.user
     booking.status = "pending"
     booking.save
 

@@ -1,0 +1,16 @@
+<% @bookings.each do |booking| %>
+  <ul>
+  <li>
+    <%= booking.house.name %>
+  </li>
+  <li>
+    <%= booking.renter.username %>
+  </li>
+  <li>
+    from <%= booking.start_time %> to <%= booking.end_time %>
+  </li>
+  <li>
+    [Approve] [Deny]
+  </li>
+  </ul>
+<% end %>
