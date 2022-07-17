@@ -1,4 +1,5 @@
 class Booking < ApplicationRecord
   belongs_to :house
-  belongs_to :user
+  belongs_to :renter, class_name: 'User'
+  belongs_to :lender, class_name: 'User'
 end

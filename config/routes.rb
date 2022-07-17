@@ -11,4 +11,8 @@ Rails.application.routes.draw do
   resources :houses, only: [:index, :show, :new, :create] do
     resources :bookings, only: [:create]
   end
+
+  namespace :lender do
+    resources :bookings, only: [:index]
+  end
 end
