@@ -1,7 +1,8 @@
 <!-- This method cannot be tested until a new booking can be made-->
 <!-- @user.booking_id retrurns an empty array which i assume will hold the new bookings-->
-<%  @user.booking_ids.each do |booking| %>
-<%= booking.status %>
-<%= booking.start_time %>
-<%= booking.emd_time %>
+<%  @user.bookings.each do |booking| %>
+  <%= booking.house.name %>
+  <%= booking.status %>
+  <%= booking.start_time %>
+  <%= booking.end_time %>
 <% end %>
