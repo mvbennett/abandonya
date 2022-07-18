@@ -1,7 +1,7 @@
 class BookingsController < ApplicationController
   def index
     @user = current_user
-    @bookings = Booking.where(user: @user.id)
+    @bookings = Booking.where(renter: @user)
   end
 
   def update
@@ -25,6 +25,8 @@ class BookingsController < ApplicationController
     booking.status = "pending"
     booking.save
 
+    # should we redirect elsewhere?
+    # popup and redirect to houses index?
     redirect_to house_path(house)
   end
 

@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  # has_many :bookings_as_renter ?
   has_many :bookings
   has_many :houses
   has_many :bookings_as_lender, through: :houses, source: :bookings
