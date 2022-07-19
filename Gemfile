@@ -66,3 +66,6 @@ gem 'devise'
 
 # pundit gem
 gem 'pundit'
+
+# env gem for cloudinary and other api keys
+gem 'dotenv-rails', groups: [:development, :test]
