@@ -1,7 +1,7 @@
 class BookingsController < ApplicationController
   def index
     @user = current_user
-    @bookings = Booking.where(renter: @user)
+    @bookings = policy_scope(Booking.where(renter: @user)).order(created_at: :desc)
   end
 
   def update
@@ -16,6 +16,7 @@ class BookingsController < ApplicationController
       # not sure if we should put something different here?
       redirect_to lender_bookings_path
     end
+    authorize booking
   end
 
   def create
@@ -36,9 +37,7 @@ class BookingsController < ApplicationController
       # send an alert?
       redirect_to house_path(house)
     end
-
-
-
+    authorize booking
   end
 
   private
