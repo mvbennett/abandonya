@@ -1,1 +1,35 @@
-// Specific CSS for your home-page
+//landing page @ home.html.erb
+.container {
+  text-align: center;
+}
+
+h1 {
+  font-family: $title-font;
+  font-size: 55px;
+  margin: 40px auto 0 auto;
+}
+
+p {
+  font-family: $regular-font;
+  font-size: 20px;
+}
+
+h4 {
+  font-family: $regular-font;
+  text-align: left;
+}
+
+.row {
+  margin-top: 40px;
+}
+
+//carousel start
+#carouselExampleIndicators {
+  margin: 0 auto;
+}
+
+.carousel-item img {
+  width:456px;
+  height:359px;
+}
+//carousel finish

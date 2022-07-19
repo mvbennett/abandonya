@@ -1,10 +1,54 @@
-<nav class="navbar navbar-light">
-  <a class="navbar-brand" href="#"><img src="http://coffeeguymike.com/abandonya/spoopyGhostGryRoof-01.png" alt="Spoopy Logo" class="spoopy-logo"></a>
-  <form class="form-inline">
-    <button class="btn my-2 my-sm-0" type="submit">Sign Up</button>
-    <button class="btn my-2 my-sm-0" type="submit">Log In</button>
-  </form>
-</nav>
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<!-- Hey this is a comment! -->
+<%= render :partial => 'shared/navbar' %>
+
+<!-- body start -->
+<div class="container">
+  <h1>abandonya</h1>
+  <p>Because who wants to sleep soundly on vacation?</p>
+
+<div class="row">
+  <!-- carousel start -->
+<div class="col-6">
+  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="http://coffeeguymike.com/abandonya/kinugawaHouse.jpg" class="w-100 img-thumbnail" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="http://coffeeguymike.com/abandonya/hotel.jpg" class="w-100 img-thumbnail" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="http://coffeeguymike.com/abandonya/IMGP7184.JPG" class="w-100 img-thumbnail" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="http://coffeeguymike.com/abandonya/noge.jpg" class="w-100 img-thumbnail" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="http://coffeeguymike.com/abandonya/octodadDesat.jpg" class="w-100 img-thumbnail" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="http://coffeeguymike.com/abandonya/stiltsWeirdCurve.jpg" class="w-100 img-thumbnail" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
+  <!-- carousel end -->
+  <h4 class="col-6">Browse through our numerous welcoming properties to find the one that speaks to you. <em>Literally</em>.</h4>
+</div>
+</div>
+<!-- body end -->
