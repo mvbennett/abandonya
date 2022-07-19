@@ -27,25 +27,25 @@ ellie.save!
 # houses, and photo attachments
 seed_house = House.new(name: "seed house", address: "123 seedy st", haunted: 3, user_id: seedyboi.id)
 seed_photo = URI.open('http://coffeeguymike.com/abandonya/IMGP7184.JPG')
-seed_house.photo.attach(io: file, filename: '', content_type: 'image/jpg')
+seed_house.photo.attach(io: file, filename: 'stairs.jpg', content_type: 'image/jpg')
 seed_house.save
 
 mikes_house = House.new(name: 'mikeyz gabagool shack', address: '665 guido street', haunted: 4, user_id: mike.id)
 mikes_photo = URI.open('http://coffeeguymike.com/abandonya/kinugawaHouse.jpg')
-mikes_house.photo.attach(io: file, filename: '', content_type: 'image/jpg')
+mikes_house.photo.attach(io: file, filename: 'kinu.jpg', content_type: 'image/jpg')
 mikes_house.save!
 
 maries_house = House.new(name: "hayataro's lair", address: '69 bourbon way', haunted: 2, user_id: marie.id)
 maries_photo = URI.open('http://coffeeguymike.com/abandonya/octodadDesat.jpg')
-maries_house.photo.attach(io: file, filename: '', content_type: 'image/jpg')
+maries_house.photo.attach(io: file, filename: 'octo.jpg', content_type: 'image/jpg')
 maries_house.save!
 
 hamishs_house = House.new(name: "hamish's apartment with like one mattress on the floor", address: '455 straya mate', haunted: 5, user_id: hamish.id)
 hamishs_photo = URI.open('http://coffeeguymike.com/abandonya/stiltsWeirdCurve.jpg')
-hamishs_house.photo.attach(io: file, filename: '', content_type: 'image/jpg')
+hamishs_house.photo.attach(io: file, filename: 'stilts.jpg', content_type: 'image/jpg')
 hamishs_house.save!
 
 ellies_house = House.new(name: "Ganon's castle", address: '69 rue effrayante', haunted: 1, user_id: ellie.id)
 ellies_photo = URI.open('http://coffeeguymike.com/abandonya/noge.jpg')
-ellies_house.photo.attach(io: file, filename: '', content_type: 'image/jpg')
+ellies_house.photo.attach(io: file, filename: 'noge.jpg', content_type: 'image/jpg')
 ellies_house.save!
