@@ -13,7 +13,8 @@ class BookingsController < ApplicationController
     if booking.update(booking_params)
       redirect_to lender_bookings_path
     else
-
+      # not sure if we should put something different here?
+      redirect_to lender_bookings_path
     end
   end
 

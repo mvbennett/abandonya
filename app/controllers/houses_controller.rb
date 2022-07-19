@@ -38,6 +38,6 @@ class HousesController < ApplicationController
   private
 
   def house_params
-    params.require(:house).permit(:name, :address, :haunted )
+    params.require(:house).permit(:name, :address, :haunted, :photo)
   end
 end

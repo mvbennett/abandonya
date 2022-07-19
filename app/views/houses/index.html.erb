@@ -7,7 +7,12 @@
 <% @houses.each do |house| %>
 <div class="class col-6 col-lg-4">
 <div class="card-product">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" class="avatar-large" />
+  <% if house.photo.nil? %>
+    <img src="https://picsum.photos/400/300" alt="totally a house">
+  <% else %>
+    <%# <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" class="avatar-large" /> %>
+    <%# <%= cl_image_tag @article.photo.key, height: 300, width: 400, crop: :fill %>
+  <% end %>
   <div class="card-product-infos">
       <h2> <%= house.name %> </h2>
       <p><%= house.address %> <strong><%= house.haunted %></strong></p>

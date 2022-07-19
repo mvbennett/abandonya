@@ -69,3 +69,6 @@ gem 'pundit'
 
 # env gem for cloudinary and other api keys
 gem 'dotenv-rails', groups: [:development, :test]
+
+# cloudinary gem
+gem 'cloudinary', '~> 1.16.0'
