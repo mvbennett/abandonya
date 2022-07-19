@@ -25,3 +25,4 @@ House.create!(name: "seed house", address: "123 seedy st", haunted: 3, user_id: 
 House.create!(name: 'mikeyz gabagool shack', address: '665 guido street', haunted: 4, user_id: mike.id)
 House.create!(name: "hayataro's lair", address: '69 bourbon way', haunted: 2, user_id: marie.id)
 House.create!(name: "hamish's apartment with like one mattress on the floor", address: '455 straya mate', haunted: 5, user_id: hamish.id)
+House.create!(name: "Gannon's castle", address: '69 rue de effrayante', haunted: 1, user_id: ellie.id)
