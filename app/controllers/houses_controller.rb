@@ -1,6 +1,11 @@
 class HousesController < ApplicationController
+  # you can do these actions without sigining in
+  skip_before_action :authenticate_user!, only: [:index, :show]
+
   def index
-    @houses = House.all
+    # @houses = House.all
+    # this covers all houses in the policy_scope
+    @houses = policy_scope(House).order(created_at: :desc)
   end
 
   def show
@@ -13,7 +18,7 @@ class HousesController < ApplicationController
     # @user = User.find(current_user.id)
     @user = current_user
     @house = House.new
-    # this needs to be authorized in the house_policy.rb
+    # authorize is linked to house_policy.rb
     authorize @house
   end
 
