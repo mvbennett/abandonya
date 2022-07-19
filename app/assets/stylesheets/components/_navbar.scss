@@ -1,12 +1,15 @@
-.navbar-lewagon {
+.navbar {
   justify-content: space-between;
-  background: white;
+  background: $card-background;
 }
 
-.navbar-lewagon .navbar-collapse {
+.btn {
   flex-grow: 0;
+  background-color: $button-background;
+  border-radius: 4px;
+  box-shadow: 1px 1px 10px grey;
 }
 
-.navbar-lewagon .navbar-brand img {
+img.spoopy-logo {
   width: 40px;
 }
