@@ -1,17 +1,19 @@
-<h1>Spoopy Houses</h1>
-
 <div class="house-card">
-  <ul>
-  <li>
-    <%= @house.name %>
-  </li>
-  <li>
-   <%= @house.address %>
-  </li>
-  <li>
-    <%= @house.haunted %>
-  </li>
+  <h2>Spoopy Houses</h2>
+  <ul class = "card-content">
+    <li>
+      <%= @house.name %>
+    </li>
+    <li>
+      <%= @house.address %>
+    </li>
+    <li>
+      <%= @house.haunted %>
+    </li>
   </ul>
+</div>
+
+<div clas="booking-form">
   <h3>
     Please enter your preferred dates:
   </h3>
@@ -20,5 +22,7 @@
     <%= f.input :end_time, as: :date, html5: true %>
     <%= f.submit %>
   <% end %>
-  <%= link_to "Go back", houses_path %>
 </div>
+
+
+<%= link_to "Go back", houses_path %>

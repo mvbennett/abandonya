@@ -10,7 +10,24 @@
     from <%= booking.start_time %> to <%= booking.end_time %>
   </li>
   <li>
-    [Approve] [Deny]
+
+<%# this may have some weird classes left over from doug's styling feel free to change classes %>
+<% if booking.pending? %>
+  <div class="d-flex">
+    <%= simple_form_for booking do |f| %>
+      <%= f.input :status, as: :hidden, input_html: { value: 'accepted'} %>
+      <%= f.submit 'Accept', class: 'btn btn-info' %>
+    <% end %>
+    <%= simple_form_for booking do |f| %>
+      <%= f.input :status, as: :hidden, input_html: { value: 'rejected'} %>
+      <%= f.submit 'Reject', class: 'btn btn-light' %>
+    <% end %>
+  </div>
+<% else %>
+  <p class='booking-tag'><%= booking.status %></p>
+<% end %>
+
+
   </li>
   </ul>
 <% end %>
