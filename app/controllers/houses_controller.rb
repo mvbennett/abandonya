@@ -27,6 +27,7 @@ class HousesController < ApplicationController
     @user = current_user
     @house = House.new(house_params)
     @house.user = @user
+    authorize @house
     if @house.save
       # should we redirect to index, the house, or somewhere else?
       redirect_to house_path(@house)
