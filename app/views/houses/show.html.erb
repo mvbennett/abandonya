@@ -1,14 +1,18 @@
 <div class="house-card">
-  <h2>Spoopy Houses</h2>
+  <h2>
+    <%= @house.name %>
+  </h2>
+  <% if @house.photo.nil? %>
+    <img src="https://picsum.photos/400/300" alt="totally a house">
+  <% else %>
+    <%= cl_image_tag @house.photo.key, height: 300, width: 400, crop: :fill %>
+  <% end %>
   <ul class = "card-content">
-    <li>
-      <%= @house.name %>
-    </li>
     <li>
       <%= @house.address %>
     </li>
     <li>
-      <%= @house.haunted %>
+      Haunting level: <%= @house.haunted %>
     </li>
   </ul>
 </div>
