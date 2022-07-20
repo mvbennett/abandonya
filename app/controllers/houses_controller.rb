@@ -22,13 +22,6 @@ class HousesController < ApplicationController
     authorize @house
   end
 
-  def destroy
-    # fetch the hosue from the db
-    @house = House.find(params[:id])
-    # destroy the house
-    @house.destroy
-  end
-
   def create
     # @user = User.find(current_user.id)
     @user = current_user
@@ -41,6 +34,22 @@ class HousesController < ApplicationController
     else
       redirect_to new_house_path
     end
+  end
+
+  # def update
+  #   house = House.find(params[:id])
+  #   house.update(house_params)
+  #   redirect_to house_path(house)
+  # end
+
+  # This does not work because of an error with the params used in the create method, check the schema
+  def destroy
+    # fetch the hosue from the db
+    @house = House.find(params[:id])
+    # destroy the house
+    @house.destroy
+    redirect_to houses_path
+    authorize @house
   end
 
   private

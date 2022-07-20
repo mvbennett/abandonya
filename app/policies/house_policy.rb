@@ -22,4 +22,8 @@ class HousePolicy < ApplicationPolicy
   def index?
     true
   end
+
+  def destroy?
+
+  end
 end

@@ -8,12 +8,9 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :bookings, only: [:index, :update]
 
-  resources :houses, only: [:index, :show, :new, :create] do
+  resources :houses, only: [:index, :show, :new, :create, :destroy] do
     resources :bookings, only: [:create]
   end
-
-  resources :houses, only: :destroy
-  resources :bookings, only: :destroy
 
   namespace :lender do
     resources :bookings, only: [:index]
