@@ -12,6 +12,9 @@ Rails.application.routes.draw do
     resources :bookings, only: [:create]
   end
 
+  resources :houses, only: :destroy
+  resources :bookings, only: :destroy
+
   namespace :lender do
     resources :bookings, only: [:index]
   end

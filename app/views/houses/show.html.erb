@@ -3,6 +3,7 @@
 <div class="house-card">
   <h2>
     <%= @house.name %>
+                <%= link_to "Delete", houses_path, class: "btn btn-outline-danger", method: 'destroy', data: { confirm: 'Are you sure?'} %>
   </h2>
   <% if @house.photo.nil? %>
     <img src="https://picsum.photos/400/300" alt="totally a house">

@@ -22,6 +22,13 @@ class HousesController < ApplicationController
     authorize @house
   end
 
+  def destroy
+    # fetch the hosue from the db
+    @house = House.find(params[:id])
+    # destroy the house
+    @house.destroy
+  end
+
   def create
     # @user = User.find(current_user.id)
     @user = current_user
