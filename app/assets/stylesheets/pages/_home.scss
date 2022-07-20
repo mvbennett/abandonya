@@ -14,10 +14,6 @@ p {
   font-size: 20px;
 }
 
-h4 {
-  font-family: $regular-font;
-  text-align: left;
-}
 
 .row {
   margin-top: 40px;
@@ -33,3 +29,23 @@ h4 {
   height:359px;
 }
 //carousel finish
+
+h4 {
+font-family: $regular-font;
+  text-align: left;
+}
+
+.browse {
+  position: relative;
+  top: 20px;
+  font-size: 0px;
+  width: 150px;
+}
+.browse:after {
+  font-size: 16px;
+  content: "See More Houses";
+}
+.browse:hover:after {
+  font-size: 16px;
+  content: "If You Dare..."
+}
