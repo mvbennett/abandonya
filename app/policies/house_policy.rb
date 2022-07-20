@@ -24,6 +24,7 @@ class HousePolicy < ApplicationPolicy
   end
 
   def destroy?
-
+    # change this!
+    true
   end
 end

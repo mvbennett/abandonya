@@ -5,11 +5,10 @@
     <%= @house.name %>
     <%= link_to 'delete',
   house_path(@house),
-  method: :destroy,
+  method: :delete,
   class: 'command',
   data: { confirm: 'Sure?' } %>
-                <%= link_to "Delete", house_path, class: "btn btn-outline-danger", method: 'destroy', data: { confirm: 'Are you sure?'} %>
-                                <%# <%= link_to "Edit", edit_house_path, class: "btn btn-outline-danger", method: 'update', data: { confirm: 'Are you sure?'} %> %>
+  <%# <%= link_to "Edit", edit_house_path, class: "btn btn-outline-danger", method: 'update', data: { confirm: 'Are you sure?'} %> %>
   </h2>
   <% if @house.photo.nil? %>
     <img src="https://picsum.photos/400/300" alt="totally a house">

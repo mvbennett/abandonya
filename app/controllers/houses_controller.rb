@@ -47,8 +47,8 @@ class HousesController < ApplicationController
     # fetch the hosue from the db
     @house = House.find(params[:id])
     # destroy the house
-    @house.destroy
-    redirect_to houses_path
+    @house.destroy!
+
     authorize @house
   end
 
