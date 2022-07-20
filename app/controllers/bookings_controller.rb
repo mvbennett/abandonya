@@ -29,10 +29,9 @@ class BookingsController < ApplicationController
     booking.lender = house.user
     booking.status = "pending"
     if booking.save
-      # should we redirect elsewhere?
-      # popup and redirect to houses index?
+      # for now redirect to bookings (as a renter) to see what you booked
       # send an alert?
-      redirect_to house_path(house)
+      redirect_to bookings_path
     else
       # send an alert?
       redirect_to house_path(house)
