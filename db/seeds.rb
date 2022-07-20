@@ -7,11 +7,13 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'open-uri'
 
+puts 'kill the past...'
 # kill the past, yay!
 Booking.destroy_all
 House.destroy_all
 User.destroy_all
 
+puts "get those users..."
 # users!
 seedyboi = User.new(username: 'seedy seed boy', email: 'seed@seedy.com', password: '123456')
 seedyboi.save
@@ -24,12 +26,14 @@ hamish.save!
 ellie = User.new(username: 'poutineLuvr', email: 'ellie@gmail.com', password: '123456')
 ellie.save!
 
+puts 'makin houses...'
 # houses, and photo attachments
 seed_house = House.new(name: "seed house", address: "123 seedy st", haunted: 3, user_id: seedyboi.id)
 seed_photo = URI.open('http://coffeeguymike.com/abandonya/rustyStairs.jpg')
 seed_house.photo.attach(io: seed_photo, filename: 'stairs.jpg', content_type: 'image/jpg')
 seed_house.save
 
+puts 'attaching users to houses...'
 mikes_house = House.new(name: 'mikeyz gabagool shack', address: '665 guido street', haunted: 4, user_id: mike.id)
 mikes_photo = URI.open('http://coffeeguymike.com/abandonya/kinugawaHouse.jpg')
 mikes_house.photo.attach(io: mikes_photo, filename: 'kinu.jpg', content_type: 'image/jpg')
@@ -49,3 +53,5 @@ ellies_house = House.new(name: "Ganon's castle", address: '69 rue effrayante', h
 ellies_photo = URI.open('http://coffeeguymike.com/abandonya/noge.jpg')
 ellies_house.photo.attach(io: ellies_photo, filename: 'noge.jpg', content_type: 'image/jpg')
 ellies_house.save!
+
+puts 'all done!'
