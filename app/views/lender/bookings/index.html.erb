@@ -7,7 +7,7 @@
     <%= booking.renter.username %>
   </li>
   <li>
-    from <%= booking.start_time %> to <%= booking.end_time %>
+    from <%= booking.start_time.strftime('%m/%d/%Y') %> to <%= booking.end_time.strftime('%m/%d/%Y') %>
   </li>
   <li>
 
@@ -15,12 +15,12 @@
 <% if booking.pending? %>
   <div class="d-flex">
     <%= simple_form_for booking do |f| %>
-      <%= f.input :status, as: :hidden, input_html: { value: 'accepted'} %>
-      <%= f.submit 'Accept', class: 'btn btn-info' %>
+      <%= f.input :status, as: :hidden, input_html: { value: 'approved'} %>
+      <%= f.submit 'Approve', class: 'btn btn-info' %>
     <% end %>
     <%= simple_form_for booking do |f| %>
-      <%= f.input :status, as: :hidden, input_html: { value: 'rejected'} %>
-      <%= f.submit 'Reject', class: 'btn btn-light' %>
+      <%= f.input :status, as: :hidden, input_html: { value: 'denied'} %>
+      <%= f.submit 'Deny', class: 'btn btn-light' %>
     <% end %>
   </div>
 <% else %>

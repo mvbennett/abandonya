@@ -1,8 +1,18 @@
 <!-- This method cannot be tested until a new booking can be made-->
 <!-- @user.booking_id retrurns an empty array which i assume will hold the new bookings-->
 <%  @bookings.each do |booking| %>
-  <%= booking.house.name %>
-  <%= booking.status %>
-  <%= booking.start_time %>
-  <%= booking.end_time %>
+  <ul>
+    <li>
+      <%= booking.house.name %>
+    </li>
+    <li>
+      <%= booking.status %>
+    </li>
+    <li>
+      <%= booking.start_time.strftime('%m/%d/%Y') %>
+    </li>
+    <li>
+      <%= booking.end_time.strftime('%m/%d/%Y') %>
+    </li>
+  </ul>
 <% end %>
