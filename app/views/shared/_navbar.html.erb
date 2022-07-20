@@ -1,22 +1,18 @@
 <%# ellie's navbar, ellie feel free to change %>
 <nav class="navbar navbar-light">
-  <%# <a class="navbar-brand" href="#"> %>
   <%# rail's link helper, we can wrap with do and class is applied with a colon %>
-  <%= link_to houses_path, class: 'navbar-brand' do %>
+  <%= link_to root_path, class: 'navbar-brand' do %>
     <img src="http://coffeeguymike.com/abandonya/spoopyGhostGryRoof-01.png" alt="Spoopy Logo" class="spoopy-logo">
     <span class="title">abandonya</span>
   <% end %>
-  <%# </a> %>
   <%# if statement to get a sign out button to show instead when logged in %>
   <% if user_signed_in? %>
-    <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'btn my-2 my-sm-0' %>
+    <%= link_to 'Log Out', destroy_user_session_path, method: :delete, class: 'btn my-2 my-sm-0' %>
   <% else %>
     <%# we probably *shouldn't* use form for this but I didn't want to change too much %>
     <form class="form-inline">
-      <%# <button class="btn my-2 my-sm-0" type="submit">Sign Up</button> %>
       <%# these links will work now: %>
       <%= link_to 'Sign Up', new_user_registration_path, class: 'btn my-2 my-sm-0' %>
-      <%# <button class="btn my-2 my-sm-0" type="submit">Log In</button> %>
       <%= link_to 'Log In', new_user_session_path, class: 'btn my-2 my-sm-0' %>
     </form>
   <% end %>
