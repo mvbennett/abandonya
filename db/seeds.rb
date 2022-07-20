@@ -40,7 +40,7 @@ maries_photo = URI.open('http://coffeeguymike.com/abandonya/octodadDesat.jpg')
 maries_house.photo.attach(io: maries_photo, filename: 'octo.jpg', content_type: 'image/jpg')
 maries_house.save!
 
-hamishs_house = House.new(name: "one mattress on the floor", address: '455 straya mate', haunted: 5, user_id: hamish.id)
+hamishs_house = House.new(name: "one mattress on the floor", address: '420 straya mate', haunted: 5, user_id: hamish.id)
 hamishs_photo = URI.open('http://coffeeguymike.com/abandonya/stiltsWeirdCurve.jpg')
 hamishs_house.photo.attach(io: hamishs_photo, filename: 'stilts.jpg', content_type: 'image/jpg')
 hamishs_house.save!
