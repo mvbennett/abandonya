@@ -1,13 +1,21 @@
 <%# ellie's navbar, ellie feel free to change %>
 <nav class="navbar navbar-light">
-  <a class="navbar-brand" href="#">
+  <%# <a class="navbar-brand" href="#"> %>
+  <%= link_to houses_path, class: 'navbar-brand' do %>
     <img src="http://coffeeguymike.com/abandonya/spoopyGhostGryRoof-01.png" alt="Spoopy Logo" class="spoopy-logo">
-  <span class="title">abandonya</span>
-  </a>
-  <form class="form-inline">
-    <button class="btn my-2 my-sm-0" type="submit">Sign Up</button>
-    <button class="btn my-2 my-sm-0" type="submit">Log In</button>
-  </form>
+    <span class="title">abandonya</span>
+  <% end %>
+  <%# </a> %>
+  <% if user_signed_in? %>
+    <%= link_to 'Sign Out', destroy_user_session_path, class: 'btn my-2 my-sm-0' %>
+  <% else %>
+    <form class="form-inline">
+      <%# <button class="btn my-2 my-sm-0" type="submit">Sign Up</button> %>
+      <%= link_to 'Sign Up', new_user_registration_path, class: 'btn my-2 my-sm-0' %>
+      <%# <button class="btn my-2 my-sm-0" type="submit">Log In</button> %>
+      <%= link_to 'Log In', new_user_session_path, class: 'btn my-2 my-sm-0' %>
+    </form>
+  <% end %>
 </nav>
 
 <!-- Default devise? navbar
