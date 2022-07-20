@@ -5,6 +5,6 @@ class House < ApplicationRecord
 
   # should ensure number values are 1-5
   validates :haunted, :inclusion => 1..5
-  validates :name, presence: true
+  validates :name, presence: true, length: { maximum: 30 }
   validates :address, presence: true
 end
