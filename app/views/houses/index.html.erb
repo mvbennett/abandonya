@@ -1,7 +1,6 @@
 <%= render :partial => 'shared/navbar' %>
 
-<%= link_to 'Add a House', new_house_path, class: 'btn my-2 my-sm-0' %>
-
+<%= link_to 'Add a House', new_house_path, class: 'btn my-2 my-sm-0 add-a-house' %>
 <div class="container">
   <div class="row">
     <% @houses.each do |house| %>
