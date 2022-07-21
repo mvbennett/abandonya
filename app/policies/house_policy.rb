@@ -24,7 +24,16 @@ class HousePolicy < ApplicationPolicy
   end
 
   def destroy?
-    # change this!
-    true
+    # - record: the houses passed to the `authorize` method in controller
+    # - user:   the `current_user` signed in with Devise.
+    record.user == user
+  end
+
+  def edit?
+    record.user == user
+  end
+
+  def update?
+    record.user == user
   end
 end
