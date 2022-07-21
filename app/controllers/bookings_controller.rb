@@ -31,7 +31,7 @@ class BookingsController < ApplicationController
     booking.status = "pending"
     if booking.save
       # for now redirect to bookings (as a renter) to see what you booked
-      # send an alert?
+      # send an alert? delete this sowrd
       flash[:notice] = "Your booking is currently pending"
       redirect_to bookings_path
     else
