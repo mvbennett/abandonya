@@ -3,6 +3,8 @@
 <div class="house-card">
   <h2>
     <%= @house.name %>
+    <%= link_to 'delete', house_path(@house), method: :delete, class: 'btn btn-danger btn-sm rounded-0' , data: { confirm: 'Sure?' } %>
+    <%= link_to "Update", edit_house_path(@house), class: 'btn btn-primary btn-sm rounded-0' , data: { confirm: 'Sure?' } %>
   </h2>
   <% if @house.photo.key.nil? %>
     <img src="https://picsum.photos/400/300" alt="totally a house">

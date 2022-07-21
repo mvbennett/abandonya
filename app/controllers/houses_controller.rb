@@ -36,6 +36,27 @@ class HousesController < ApplicationController
     end
   end
 
+  def edit
+    @house = House.find(params[:id])
+    authorize @house
+  end
+
+  def update
+    house = House.find(params[:id])
+    house.update(house_params)
+    redirect_to house_path(house)
+    authorize house
+  end
+
+  def destroy
+    # fetch the hosue from the db
+    @house = House.find(params[:id])
+    # destroy the house
+    @house.destroy!
+    redirect_to houses_path
+    authorize @house
+  end
+
   private
 
   def house_params
