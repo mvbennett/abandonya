@@ -16,10 +16,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Ibarra+Real+Nova:ital@0;1&display=swap" rel="stylesheet">
     <!-- Links from google fonts for font packs -->
+
   </head>
 
 
   <body>
-    <%= yield %>
+  <%= render 'shared/flashes' %>
+      <%= yield %>
   </body>
 </html>

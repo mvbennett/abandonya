@@ -11,6 +11,7 @@ class BookingsController < ApplicationController
     # Changes the booking params
     # I wonder if it might be better to use an if loop or variable and just change booking.status directly and save -mike
     if booking.update(booking_params)
+      flash[:notice] = "The booking has been #{booking_params["status"]}"
       redirect_to lender_bookings_path
     else
       # not sure if we should put something different here?
@@ -30,7 +31,8 @@ class BookingsController < ApplicationController
     booking.status = "pending"
     if booking.save
       # for now redirect to bookings (as a renter) to see what you booked
-      # send an alert?
+      # send an alert? delete this sowrd
+      flash[:notice] = "Your booking is currently pending"
       redirect_to bookings_path
     else
       # send an alert?
