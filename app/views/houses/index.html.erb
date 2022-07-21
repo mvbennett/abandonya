@@ -1,13 +1,12 @@
 <%= render :partial => 'shared/navbar' %>
 
-<h1>Spoopy Houses ooooOOOOoo</h1>
-
+<%= link_to 'Add a House', new_house_path, class: 'btn my-2 my-sm-0 add-a-house' %>
 <div class="container">
   <div class="row">
     <% @houses.each do |house| %>
       <div class="class col-6 col-lg-4">
         <div class="card-product">
-          <% if house.photo.nil? %>
+          <% if house.photo.key.nil? %>
             <img src="https://picsum.photos/400/300" alt="totally a house">
           <% else %>
             <%# <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" class="avatar-large" /> %>

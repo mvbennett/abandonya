@@ -1,0 +1,9 @@
+<h1>Houses#edit</h1>
+<p>Find me in app/views/houses/new.html.erb</p>
+<%= simple_form_for(@house) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :address %>
+  <%= f.input :haunted %>
+  <%= f.input :photo, as: :file %>
+  <%= f.submit %>
+<% end %>
