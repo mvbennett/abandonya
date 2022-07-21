@@ -1,15 +1,19 @@
 <%= render :partial => 'shared/navbar' %>
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-6 col-lg-9">
+      <div class="house-pic-card">
+        <h2><%= @house.name %></h2>
+        <% if @house.photo.nil? %>
+          <img src="https://picsum.photos/400/300" alt="totally a house">
+        <% else %>
+          <%= cl_image_tag @house.photo.key, height: 300, width: 400, crop: :fill %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 
-<div class="house-card">
-  <h2>
-    <%= @house.name %>
-  </h2>
-  <% if @house.photo.nil? %>
-    <img src="https://picsum.photos/400/300" alt="totally a house">
-  <% else %>
-    <%= cl_image_tag @house.photo.key, height: 300, width: 400, crop: :fill %>
-  <% end %>
-  <ul class = "card-content">
+  <ul>
     <li>
       <%= @house.address %>
     </li>
@@ -19,6 +23,8 @@
   </ul>
 </div>
 
+
+
 <div clas="booking-form">
   <h3>
     Please enter your preferred dates:
@@ -26,7 +32,7 @@
   <%= simple_form_for [@house, @booking] do |f| %>
     <%= f.input :start_time, as: :date, html5: true %>
     <%= f.input :end_time, as: :date, html5: true %>
-    <%= f.submit %>
+    <%= f.submit class: 'btn my-2 my-sm-0' %>
   <% end %>
 </div>
 
