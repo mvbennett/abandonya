@@ -7,10 +7,21 @@ class Booking < ApplicationRecord
   validates :end_time, presence: true
   validates :status, inclusion: { in: %w(pending approved denied) }
   # these should work according to rail's own documentation but give an error
-  # validates :start_time, date: { after: Proc.new { Date.today } }
-  # validates :start_time, date: { before: :end_time }
-  # validates :end_time, date: { after: :start_time }
+  validate :after_today?, :start_before_end?
+
   def pending?
     status == 'pending'
+  end
+
+  def after_today?
+    if start_time < Date.today
+      errors.add(:start_time, "can't be in the past")
+    end
+  end
+
+  def start_before_end?
+    if end_time < start_time
+      errors.add(:end_time, "can't be before start")
+    end
   end
 end
