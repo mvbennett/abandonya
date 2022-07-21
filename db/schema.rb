@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(version: 2022_07_19_142435) do
   end
 
   create_table "houses", force: :cascade do |t|
+    # does houses need to include :photos ? Delete this if added or proved false
     t.string "name"
     t.string "address"
     t.integer "haunted"

@@ -10,29 +10,43 @@
           <%= cl_image_tag @house.photo.key, height: 300, width: 400, crop: :fill %>
         <% end %>
       </div>
-  </div>
-
-  <div class="col-12 col-md-6 col-lg-3">
-    <div class="house-info-card">
-      <ul>
-        <li><%= @house.address %></li>
-        <li>Haunting level: <%= @house.haunted %></li>
-      </ul>
     </div>
   </div>
-</div>
 
-
-<div clas="booking-form">
-  <h3>
-    Please enter your preferred dates:
-  </h3>
-  <%= simple_form_for [@house, @booking] do |f| %>
-    <%= f.input :start_time, as: :date, html5: true %>
-    <%= f.input :end_time, as: :date, html5: true %>
-    <%= f.submit %>
+  <ul>
+<div class="house-card">
+  <h2>
+    <%= @house.name %>
+  </h2>
+  <% if @house.photo.key.nil? %>
+    <img src="https://picsum.photos/400/300" alt="totally a house">
+  <% else %>
+    <%= cl_image_tag @house.photo.key, height: 300, width: 400, crop: :fill %>
   <% end %>
+  <ul class = "card-content">
+    <li>
+      <%= @house.address %>
+    </li>
+    <li>
+      Haunting level: <%= @house.haunted %>
+    </li>
+  </ul>
 </div>
 
+<% if @house.user == current_user %>
+  <%= link_to 'delete', house_path(@house), method: :delete, class: 'btn btn-danger btn-sm rounded-0' , data: { confirm: 'Sure?' } %>
+  <%= link_to "Update", edit_house_path(@house), class: 'btn btn-primary btn-sm rounded-0' , data: { confirm: 'Sure?' } %>
+<% else %>
 
+  <div clas="booking-form">
+    <h3>
+      Please enter your preferred dates:
+    </h3>
+    <%= simple_form_for [@house, @booking] do |f| %>
+      <%= f.input :start_time, as: :date, html5: true %>
+      <%= f.input :end_time, as: :date, html5: true %>
+      <%= f.submit class: 'btn my-2 my-sm-0' %>
+    <% end %>
+  </div>
+<% end %>
 <%= link_to "Go back", houses_path %>
