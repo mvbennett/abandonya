@@ -1,48 +1,28 @@
-.container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 30px;
-  align-items: center;
-
+a.go-back {
+  position: relative;
+  top: 20px;
+  left: 20px;
 }
 
+.house-title {
+  margin: 0 auto 25px auto;
+}
 
-.house-pic-card{
-  background-color: $card-background;
-  width: 500px;
-  padding: 50px;
-  padding-top: 20px;
-  margin: 40px;
-  margin-top: 50px;
+.img-show {
   border-radius: 4px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.15);
 }
 
-img {
-  border-radius: 2px;
-}
-
-h2{
-  text-align: center;
-}
-
-.house-details{
-  display: flex;
+.house-details {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  font-size: 20px;
   background-color: $card-background;
-  width: 300px;
-  height: 300px;
+  padding: 10px;
   border-radius: 4px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.15);
-  margin: 40px;
 }
 
-ul{
-  margin: 0 auto;
-  padding-top: 30px;
-}
-
-h3{
-  background-color: $card-background;
-  border-radius: 4px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.15);
+.input-fields {
+  font-size: 12px;
+  text-align: left;
 }
