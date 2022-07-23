@@ -2,6 +2,9 @@ footer {
   text-align: center;
   padding: 8px;
   background-color: $completed-background;
+  bottom: 0;
+  width: 100%;
+  display: block;
 }
 footer a {
   color: black;

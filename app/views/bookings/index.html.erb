@@ -2,6 +2,9 @@
 
 <div class="container my-bookings">
   <h5 class="mybooking-status">Approved</h5>
+  <% if @approved_bookings.empty? %>
+    Waiting for your bookings to be approved...
+  <% end %>
   <%  @approved_bookings.each do |booking| %>
     <div class="booking-card approved">
       <div class="row remove-margintop">
@@ -44,6 +47,9 @@
 
 
   <h5 class="mybooking-status">Pending</h5>
+  <% if @pending_bookings.empty? %>
+    Currently no pending bookings...
+  <% end %>
   <%  @pending_bookings.each do |booking| %>
     <div class="booking-card pending">
       <div class="row remove-margintop">
