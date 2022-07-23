@@ -22,7 +22,10 @@
         Address: <%= @house.address %>
       </li>
       <li>
-        Haunting level: <%= @house.haunted %>
+        Haunting level:
+        <% @house.haunted.times do %>
+          <%= image_tag("lilGhostBlk.svg") %>
+        <% end %>
       </li>
       <li>
         Comment from owner:
