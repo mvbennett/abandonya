@@ -1,11 +1,9 @@
-<!-- This method cannot be tested until a new booking can be made-->
-<!-- @user.booking_id retrurns an empty array which i assume will hold the new bookings-->
 <%= render :partial => 'shared/navbar' %>
 
 <div class="container my-bookings">
-
-  <%  @bookings.each do |booking| %>
-    <div class="booking-card">
+  <h5 class="mybooking-status">Approved</h5>
+  <%  @approved_bookings.each do |booking| %>
+    <div class="booking-card approved">
       <div class="row remove-margintop">
         <div class="col-8 img-description">
           <div class="mybooking-img">
@@ -44,4 +42,87 @@
     </div>
   <% end %>
 
+
+  <h5 class="mybooking-status">Pending</h5>
+  <%  @pending_bookings.each do |booking| %>
+    <div class="booking-card pending">
+      <div class="row remove-margintop">
+        <div class="col-8 img-description">
+          <div class="mybooking-img">
+          <%# make the image smaller maybe? %>
+            <% if booking.house.photo.key.nil? %>
+              <img src="https://picsum.photos/400/300" alt="totally a house">
+            <% else %>
+              <%= cl_image_tag booking.house.photo.key, crop: :fill, class: 'img-show' %>
+            <% end %>
+          </div>
+          <div class="mybooking-housedescription">
+            <ul class="mybooking-ul">
+              <li class="mybooking-title">
+                <%= booking.house.name %>
+              </li>
+              <li>
+                <%= booking.house.address %>
+              </li>
+              <li>
+                <%= booking.start_time.strftime('%m/%d/%Y') %> to <%= booking.end_time.strftime('%m/%d/%Y') %>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="booking-status">
+            <%= booking.status %>
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="booking-button">
+            <%= link_to "Cancel", houses_path, class: 'btn my-2 my-sm-0 cancel-btn' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+
+  <h5 class="mybooking-status">Completed</h5>
+  <%  @past_bookings.each do |booking| %>
+    <div class="booking-card completed">
+      <div class="row remove-margintop">
+        <div class="col-8 img-description">
+          <div class="mybooking-img">
+          <%# make the image smaller maybe? %>
+            <% if booking.house.photo.key.nil? %>
+              <img src="https://picsum.photos/400/300" alt="totally a house">
+            <% else %>
+              <%= cl_image_tag booking.house.photo.key, crop: :fill, class: 'img-show' %>
+            <% end %>
+          </div>
+          <div class="mybooking-housedescription">
+            <ul class="mybooking-ul">
+              <li class="mybooking-title">
+                <%= booking.house.name %>
+              </li>
+              <li>
+                <%= booking.house.address %>
+              </li>
+              <li>
+                <%= booking.start_time.strftime('%m/%d/%Y') %> to <%= booking.end_time.strftime('%m/%d/%Y') %>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="booking-status">
+            <%= booking.status %>
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="booking-button">
+            <%= link_to "Cancel", houses_path, class: 'btn my-2 my-sm-0 cancel-btn' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </div>
