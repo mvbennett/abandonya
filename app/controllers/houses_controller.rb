@@ -23,6 +23,9 @@ class HousesController < ApplicationController
   end
 
   def create
+    # This needs to linked to a devise controller to be able to return to the previous page
+    # session[:return_to] = request.referer
+    # super
     # @user = User.find(current_user.id)
     @user = current_user
     @house = House.new(house_params)
