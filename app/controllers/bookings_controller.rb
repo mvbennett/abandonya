@@ -8,9 +8,9 @@ class BookingsController < ApplicationController
     @bookings.each do |booking|
       if booking.status == 'pending'
         @pending_bookings << booking
-      elsif
+      elsif booking.status == 'approved'
         @approved_bookings << booking
-      else
+      elsif booking.status == 'denied' || booking.end_time < Date.today
         @past_bookings << booking
       end
     end
