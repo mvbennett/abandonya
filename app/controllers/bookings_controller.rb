@@ -1,11 +1,11 @@
 class BookingsController < ApplicationController
   def index
     @user = current_user
-    @bookings = policy_scope(Booking.where(renter: @user)).order(created_at: :desc)
+    bookings = policy_scope(Booking.where(renter: @user)).order(created_at: :desc)
     @pending_bookings = []
     @approved_bookings = []
     @past_bookings = []
-    @bookings.each do |booking|
+    bookings.each do |booking|
       if booking.status == 'pending'
         @pending_bookings << booking
       elsif booking.status == 'approved'
