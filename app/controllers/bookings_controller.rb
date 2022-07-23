@@ -48,7 +48,7 @@ class BookingsController < ApplicationController
       redirect_to bookings_path
     else
       # send an alert?
-      redirect_to house_path(house)
+        redirect_to house_path(house)
     end
     authorize booking
   end

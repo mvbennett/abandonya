@@ -34,8 +34,8 @@
 
     <%# if/else to show booking form or update and delete buttons depending on user %>
     <% if @house.user == current_user %>
-      <%= link_to 'Delete', house_path(@house), method: :delete, class: 'btn btn-sm rounded-3' , data: { confirm: 'Sure?' } %>
-      <%= link_to "Update", edit_house_path(@house), class: 'btn btn-sm rounded-3' , data: { confirm: 'Sure?' } %>
+      <%= link_to 'Delete', house_path(@house), method: :delete, class: 'btn btn-sm rounded-3' , data: { confirm: 'Are you sure you would like to delete this house?' } %>
+      <%= link_to "Update", edit_house_path(@house), class: 'btn btn-sm rounded-3' , data: { confirm: 'Are you sure you would like to update your house?' } %>
     <% else %>
       <%# <h5>
         Booking dates
