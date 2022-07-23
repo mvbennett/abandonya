@@ -8,7 +8,7 @@
   <div class="col-6 house-pic">
     <div class="house-pic-card">
       <%# make sure to keep the if else tag for the picture %>
-      <% if @house.photo.nil? %>
+      <% if @house.photo.key.nil? %>
         <img src="https://picsum.photos/400/300" alt="totally a house">
       <% else %>
         <%= cl_image_tag @house.photo.key, height: 300, width: 400, crop: :fill, class: 'img-show' %>
