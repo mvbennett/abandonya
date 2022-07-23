@@ -28,28 +28,29 @@ ellie.save!
 
 puts 'makin houses...'
 # houses, and photo attachments
-seed_house = House.new(name: "seed house", address: "123 seedy st", haunted: 3, user_id: seedyboi.id)
+seed_house = House.new(name: "seed house", address: "123 seedy st", haunted: 3, description: "Please make sure that your tetanus shots are up to date.", user_id: seedyboi.id)
 seed_photo = URI.open('http://coffeeguymike.com/abandonya/rustyStairs.jpg')
 seed_house.photo.attach(io: seed_photo, filename: 'stairs.jpg', content_type: 'image/jpg')
 seed_house.save
 
 puts 'attaching users to houses...'
-mikes_house = House.new(name: 'mikeyz gabagool shack', address: '665 guido street', haunted: 4, user_id: mike.id)
+mikes_house = House.new(name: 'mikeyz gabagool shack', address: '665 guido street',haunted: 4, description: "This was my great-grand-uncle's house back in the day. He's not actually related to me but used to get us cool stuff that fell off the back of a truck. He used to make the best gabagool in Bensonhurst until one day he had a crazy deli slicer accident in his home. For some reason I always hear him whispering whenever I stay there. Saying things like 'eh' and 'I'm walkin here.'" , user_id: mike.id)
 mikes_photo = URI.open('http://coffeeguymike.com/abandonya/kinugawaHouse.jpg')
 mikes_house.photo.attach(io: mikes_photo, filename: 'kinu.jpg', content_type: 'image/jpg')
 mikes_house.save!
 
-maries_house = House.new(name: "hayataro's lair", address: '69 bourbon way', haunted: 2, user_id: marie.id)
+maries_house = House.new(name: "hayataro's lair", address: '69 bourbon way', haunted: 2, description: "Beware of dog, protect your ankles. Check futon for dampness before lying down." , user_id: marie.id)
 maries_photo = URI.open('http://coffeeguymike.com/abandonya/octodadDesat.jpg')
 maries_house.photo.attach(io: maries_photo, filename: 'octo.jpg', content_type: 'image/jpg')
 maries_house.save!
 
-hamishs_house = House.new(name: "one mattress on the floor", address: '420 straya mate', haunted: 5, user_id: hamish.id)
+hamishs_house = House.new(name: "one mattress on the floor", address: '420 straya mate', haunted: 5, description: "Perfect bachelor pad.", user_id: hamish.id)
 hamishs_photo = URI.open('http://coffeeguymike.com/abandonya/stiltsWeirdCurve.jpg')
 hamishs_house.photo.attach(io: hamishs_photo, filename: 'stilts.jpg', content_type: 'image/jpg')
 hamishs_house.save!
 
-ellies_house = House.new(name: "Ganon's castle", address: '69 rue effrayante', haunted: 1, user_id: ellie.id)
+ellies_house = House.new(name: "Hyrule's castle", address: '900 rue effrayante', haunted: 1, description: "Very spacious and quiet. You'll enjoy exploring all the unused rooms undisturbed. There's a big black cloud of angry miasma floating above it but it's cool don't worry too much about it. Also please bring a sword and at least one red potion (just a precaution...)
+", user_id: ellie.id)
 ellies_photo = URI.open('http://coffeeguymike.com/abandonya/noge.jpg')
 ellies_house.photo.attach(io: ellies_photo, filename: 'noge.jpg', content_type: 'image/jpg')
 ellies_house.save!
