@@ -5,12 +5,14 @@
   <div class="row">
     <% @houses.each do |house| %>
       <div class="class col-4 mt-3 mb-4">
-        <div class="card-product">
+        <div class="card-product" >
+        <%= link_to house_path(house) do %>
           <% if house.photo.key.nil? %>
             <img src="https://picsum.photos/400/300" alt="totally a house">
           <% else %>
             <%# <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" class="avatar-large" /> %>
             <%= cl_image_tag house.photo.key, height: 300, width: 400, crop: :fill, class: 'img-thumbnail' %>
+          <% end %>
           <% end %>
           <div class="card-product-infos">
             <h2>
@@ -19,10 +21,11 @@
             <p>
               <%= house.address %>
             </p>
-            <%= link_to "House Details", house_path(house), class: "btn" %>
           </div>
         </div>
       </div>
     <% end %>
   </div>
 </div>
+
+<%= render :partial => 'shared/footer' %>
