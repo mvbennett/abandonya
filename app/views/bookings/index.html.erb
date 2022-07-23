@@ -1,18 +1,35 @@
 <!-- This method cannot be tested until a new booking can be made-->
 <!-- @user.booking_id retrurns an empty array which i assume will hold the new bookings-->
-<%  @bookings.each do |booking| %>
-  <ul>
-    <li>
-      <%= booking.house.name %>
-    </li>
-    <li>
-      <%= booking.status %>
-    </li>
-    <li>
-      <%= booking.start_time.strftime('%m/%d/%Y') %>
-    </li>
-    <li>
-      <%= booking.end_time.strftime('%m/%d/%Y') %>
-    </li>
-  </ul>
-<% end %>
+<%= render :partial => 'shared/navbar' %>
+
+<div class="container">
+
+  <%  @bookings.each do |booking| %>
+    <div class="booking-card">
+    <%# make the image smaller maybe? %>
+    <% if booking.house.photo.key.nil? %>
+      <img src="https://picsum.photos/400/300" alt="totally a house">
+    <% else %>
+      <%= cl_image_tag @house.photo.key, height: 300, width: 400, crop: :fill, class: 'img-show' %>
+    <% end %>
+      <ul>
+        <li>
+          <%= booking.house.name %>
+        </li>
+        <li>
+          <%= booking.house.address %>
+        </li>
+        <li>
+          <%= booking.start_time.strftime('%m/%d/%Y') %> to <%= booking.end_time.strftime('%m/%d/%Y') %>
+        </li>
+      </ul>
+      <div class="booking-status">
+        <%= booking.status %>
+      </div>
+      <div class="booking-button">
+        <%# button here %>
+      </div>
+    </div>
+  <% end %>
+
+</div>
