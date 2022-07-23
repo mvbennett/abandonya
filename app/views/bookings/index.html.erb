@@ -10,7 +10,7 @@
     <% if booking.house.photo.key.nil? %>
       <img src="https://picsum.photos/400/300" alt="totally a house">
     <% else %>
-      <%= cl_image_tag @house.photo.key, height: 300, width: 400, crop: :fill, class: 'img-show' %>
+      <%= cl_image_tag booking.house.photo.key, height: 300, width: 400, crop: :fill, class: 'img-show' %>
     <% end %>
       <ul>
         <li>
