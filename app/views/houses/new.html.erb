@@ -1,11 +1,17 @@
-<h1>Houses#new</h1>
-<p>Find me in app/views/houses/new.html.erb</p>
-<%= simple_form_for(@house) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :address %>
-  <%= f.input :haunted %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit %>
-<% end %>
+<div class="container left">
+  <h2>
+    Tell us about your house
+  </h2>
+
+  <%= simple_form_for(@house) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :haunted, as: :radio_buttons, collection: %w'1 2 3 4 5' %>
+    <%= f.input :description %>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit %>
+  <% end %>
+
+</div>
 
 <%= render :partial => 'shared/footer' %>
