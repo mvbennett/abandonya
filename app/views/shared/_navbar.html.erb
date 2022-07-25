@@ -10,12 +10,6 @@
     <form class="form-inline">
       <%= link_to 'My Bookings', bookings_path, class: 'btn my-2 my-sm-0' %>
       <%= link_to 'Log Out', destroy_user_session_path, method: :delete, class: 'btn my-2 my-sm-0' %>
-      <%# form for the searchbar %>
-      <%= form_tag houses_path, method: :get do %>
-      <%= text_field_tag :query,
-        params[:query], placeholder: "Find a house"%>
-      <%= submit_tag "Search", class: "btn btn-primary" %>
-    <% end %>
     </form>
   <% else %>
     <%# we probably *shouldn't* use form for this but I didn't want to change too much %>
@@ -23,16 +17,9 @@
       <%# these links will work now: %>
       <%= link_to 'Sign Up', new_user_registration_path, class: 'btn my-2 my-sm-0' %>
       <%= link_to 'Log In', new_user_session_path, class: 'btn my-2 my-sm-0' %>
-      <%# form for the searchbar %>
-      <%= form_tag houses_path, method: :get do %>
-      <%= text_field_tag :query,
-        params[:query], placeholder: "Find a house"%>
-      <%= submit_tag "Search", class: "btn btn-primary" %>
-    <% end %>
     </form>
   <% end %>
 </nav>
-
 
 <!-- Default devise? navbar
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
