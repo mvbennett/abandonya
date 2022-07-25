@@ -72,3 +72,6 @@ gem 'dotenv-rails', groups: [:development, :test]
 
 # cloudinary gem
 gem 'cloudinary', '~> 1.16.0'
+
+# for the search bar
+gem 'pg_search', '~> 2.3.0'
