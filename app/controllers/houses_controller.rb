@@ -3,9 +3,13 @@ class HousesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    # @houses = House.all
-    # this covers all houses in the policy_scope
-    @houses = policy_scope(House).order(created_at: :desc)
+    if params[:query].present?
+      @houses = House.search_by_name_and_address(params[:query])
+    else
+      @houses = House.all
+      # this covers all houses in the policy_scope
+      @houses = policy_scope(House).order(created_at: :desc)
+    end
   end
 
   def show
