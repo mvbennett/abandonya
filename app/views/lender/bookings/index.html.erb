@@ -49,7 +49,7 @@
                 <% end %>
                 <%= simple_form_for booking do |f| %>
                   <%= f.input :status, as: :hidden, input_html: { value: 'denied'} %>
-                  <%= f.submit 'Deny', class: 'btn my-2 my-sm-0' %>
+                  <%= f.submit 'Deny', class: 'btn my-2 my-sm-0 denial' %>
                 <% end %>
               </div>
             <% else %>
