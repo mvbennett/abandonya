@@ -21,7 +21,8 @@ class HousesController < ApplicationController
     # these are called in the mapbox controller
   @markers = [{
     lat: @house.latitude,
-    lng: @house.longitude
+    lng: @house.longitude,
+    info_window: render_to_string(partial: "info_window", locals: { house: @house })
             }]
   end
 
