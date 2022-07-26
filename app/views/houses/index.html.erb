@@ -1,11 +1,15 @@
-<%= render :partial => 'shared/indexnavbar' %>
+<%= render :partial => 'shared/navbar' %>
 
 <!-- the list of houses -->
-<!--
-<%= link_to 'Add a House', new_house_path, class: 'btn my-2 my-sm-0 add-a-house' %>
--->
 <div class="container">
   <div class="row">
+    <div class="search-container left">
+      <%= form_tag houses_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query], placeholder: "Find a house", class: "search-field" %>
+        <%= submit_tag "Search", class: "btn my-2 my-sm-0" %>
+      <% end %>
+    </div>
     <% @houses.each do |house| %>
       <div class="class col-4 mt-3 mb-4">
         <div class="card-product">
@@ -22,7 +26,7 @@
               <%= truncate(house.name, length: 21) %>
             </h2>
             <p>
-              <%= truncate(house.address, length: 30) %>
+              <%= truncate(house.address, length: 40) %>
             </p>
           </div>
         </div>

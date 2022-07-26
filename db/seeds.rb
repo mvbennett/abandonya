@@ -34,7 +34,7 @@ seed_house.photo.attach(io: seed_photo, filename: 'stairs.jpg', content_type: 'i
 seed_house.save
 
 puts 'attaching users to houses...'
-mikes_house = House.new(name: 'mikeyz gabagool shack', address: '665 guido street',haunted: 4, description: "This was my great-grand-uncle's house back in the day. He's not actually related to me but used to get us cool stuff that fell off the back of a truck. He used to make the best gabagool in Bensonhurst until one day he had a crazy deli slicer accident in his home. For some reason I always hear him whispering whenever I stay there. Saying things like 'eh' and 'I'm walkin here.'" , user_id: mike.id)
+mikes_house = House.new(name: 'mikeyz gabagool shack', address: '460 Brielle Ave, Staten Island, NY 10314, United States', haunted: 4, description: "This was my great-grand-uncle's house back in the day. He's not actually related to me but used to get us cool stuff that fell off the back of a truck. He used to make the best gabagool in Bensonhurst until one day he had a crazy deli slicer accident in his home. For some reason I always hear him whispering whenever I stay there. Saying things like 'eh' and 'I'm walkin here.'" , user_id: mike.id)
 mikes_photo = URI.open('http://coffeeguymike.com/abandonya/kinugawaHouse.jpg')
 mikes_house.photo.attach(io: mikes_photo, filename: 'kinu.jpg', content_type: 'image/jpg')
 mikes_house.save!
