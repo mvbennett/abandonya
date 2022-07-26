@@ -51,6 +51,11 @@ ul.mybooking-ul {
   margin: 0;
 }
 
+.denial:hover {
+  background-color: $denial-red;
+  color: black;
+}
+
 .card-product {
   background-color: rgb(250, 250, 250);
   padding: 2px;
