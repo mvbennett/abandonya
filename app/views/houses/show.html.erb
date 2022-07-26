@@ -53,4 +53,10 @@
   </div>
 </div>
 
+<%# This is the geocoded map. It can be moved i just put it here for testing purposes%>
+<div style="width: 100%; height: 600px;"
+  data-controller="mapbox"
+  data-mapbox-markers-value="<%= @markers.to_json %>"
+  data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+
 <%= render :partial => 'shared/footer' %>
