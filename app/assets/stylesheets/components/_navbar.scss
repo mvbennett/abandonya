@@ -35,3 +35,10 @@ img.spoopy-logo {
   background-color: $slime-green;
   box-shadow: 1px 5px 10px grey;
 }
+
+.search-flex-container {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  gap: 8px;
+}

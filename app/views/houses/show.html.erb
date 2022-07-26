@@ -1,55 +1,57 @@
 <%= render :partial => 'shared/navbar' %>
 <%= link_to "Go back", houses_path, class: 'btn my-2 my-sm-0 go-back' %>
 <div class="container">
-      <h2 class="house-title">
-        <%= @house.name %>
-      </h2>
-<div class="row">
-  <div class="col-8 house-pic">
-    <div class="house-pic-card">
-      <%# make sure to keep the if else tag for the picture %>
-      <% if @house.photo.key.nil? %>
-        <img src="https://picsum.photos/400/300" alt="totally a house">
-      <% else %>
-        <%= cl_image_tag @house.photo.key, crop: :fill, class: 'img-show' %>
-      <% end %>
-    </div>
-  </div>
-
-  <div class="col-4 house-info">
-    <ul class="house-details">
-      <li>
-        Address: <%= @house.address %>
-      </li>
-      <li>
-        Haunting level:
-        <% @house.haunted.times do %>
-          <%= image_tag("lilGhostBlk.svg") %>
-        <% end %>
-      </li>
-      <li>
-        Comment from owner: <%= @house.description %>
-      </li>
-    </ul>
-
-    <%# if/else to show booking form or update and delete buttons depending on user %>
-    <% if @house.user == current_user %>
-      <%= link_to 'Delete', house_path(@house), method: :delete, class: 'btn btn-sm rounded-3' , data: { confirm: 'Are you sure you would like to delete this house?' } %>
-      <%= link_to "Update", edit_house_path(@house), class: 'btn btn-sm rounded-3' , data: { confirm: 'Are you sure you would like to update your house?' } %>
-    <% else %>
-      <%# <h5>
-        Booking dates
-      </h5> %>
-      <div class="booking-form">
-        <%= simple_form_for [@house, @booking] do |f| %>
-          <div class="input-fields">
-            <%= f.input :start_time, as: :date, html5: true, label: 'From', input_html: { min: "#{Date.today}"} %>
-            <%= f.input :end_time, as: :date, html5: true, label: 'To', input_html: { min: "#{Date.today}"} %>
-          </div>
-          <%= f.submit class: 'btn my-2 my-sm-0' %>
+  <h2 class="house-title">
+    <%= @house.name %>
+  </h2>
+  <div class="row">
+    <div class="col-8 house-pic">
+      <div class="house-pic-card">
+        <%# make sure to keep the if else tag for the picture %>
+        <% if @house.photo.key.nil? %>
+          <img src="https://picsum.photos/400/300" alt="totally a house">
+        <% else %>
+          <%= cl_image_tag @house.photo.key, crop: :fill, class: 'img-show' %>
         <% end %>
       </div>
-    <% end %>
+    </div>
+
+
+    <div class="col-4 house-info">
+      <ul class="house-details">
+        <li>
+          Address: <%= @house.address %>
+        </li>
+        <li>
+          Haunting level:
+          <% @house.haunted.times do %>
+            <%= image_tag("lilGhostBlk.svg") %>
+          <% end %>
+        </li>
+        <li>
+          Comment from owner: <%= @house.description %>
+        </li>
+      </ul>
+
+      <%# if/else to show booking form or update and delete buttons depending on user %>
+      <% if @house.user == current_user %>
+        <%= link_to 'Delete', house_path(@house), method: :delete, class: 'btn btn-sm rounded-3' , data: { confirm: 'Are you sure you would like to delete this house?' } %>
+        <%= link_to "Update", edit_house_path(@house), class: 'btn btn-sm rounded-3' , data: { confirm: 'Are you sure you would like to update your house?' } %>
+      <% else %>
+        <%# <h5>
+          Booking dates
+        </h5> %>
+        <div class="booking-form">
+          <%= simple_form_for [@house, @booking] do |f| %>
+            <div class="input-fields">
+              <%= f.input :start_time, as: :date, html5: true, label: 'From', input_html: { min: "#{Date.today}"} %>
+              <%= f.input :end_time, as: :date, html5: true, label: 'To', input_html: { min: "#{Date.today}"} %>
+            </div>
+            <%= f.submit class: 'btn my-2 my-sm-0' %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
 
