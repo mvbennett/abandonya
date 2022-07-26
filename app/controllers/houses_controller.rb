@@ -3,11 +3,6 @@ class HousesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    # the `geocoded` scope filters only houses with coordinates (latitude & longitude)
-    # these are called in the mapbox controller
-    @markers = @houses.geocoded.map do |house|
-      { lat: house.latitude, lng: house.longitude }
-    end
     # this returns certain houses depending on the query in the searchbar
     if params[:query].present?
       @houses = House.search_by_name_and_address(params[:query])
@@ -22,6 +17,12 @@ class HousesController < ApplicationController
     @house = House.find(params[:id])
     @booking = Booking.new
     authorize @house
+  # the `geocoded` scope filters only houses with coordinates (latitude & longitude)
+    # these are called in the mapbox controller
+  @markers = [{
+    lat: @house.latitude,
+    lng: @house.longitude
+            }]
   end
 
   def new
