@@ -17,7 +17,7 @@
           <% end %>
           <div class="card-product-infos">
             <h2>
-              <%= house.name %>
+              <%= truncate(house.name, length: 21) %>
             </h2>
             <p>
               <%= house.address %>

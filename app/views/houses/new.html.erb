@@ -4,7 +4,7 @@
   </h2>
 
   <%= simple_form_for(@house) do |f| %>
-    <%= f.input :name %>
+    <%= f.input :name, maxlength: 21 %>
     <%= f.input :address %>
     <%= f.input :haunted, as: :radio_buttons, collection: %w'1 2 3 4 5' %>
     <%= f.input :description %>
