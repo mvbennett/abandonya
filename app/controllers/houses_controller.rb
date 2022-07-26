@@ -17,12 +17,14 @@ class HousesController < ApplicationController
     @house = House.find(params[:id])
     @booking = Booking.new
     authorize @house
-  # the `geocoded` scope filters only houses with coordinates (latitude & longitude)
+    # the `geocoded` scope filters only houses with coordinates (latitude & longitude)
     # these are called in the mapbox controller
   @markers = [{
     lat: @house.latitude,
     lng: @house.longitude,
-    info_window: render_to_string(partial: "info_window", locals: { house: @house })
+    info_window: render_to_string(partial: "info_window",
+      locals: { house: @house }),
+      image_url: helpers.asset_url("apple-touch-icon.png")
             }]
   end
 
