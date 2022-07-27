@@ -3,6 +3,7 @@ class HousesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
+    # this returns certain houses depending on the query in the searchbar
     if params[:query].present?
       @houses = House.search_by_name_and_address(params[:query])
     else
@@ -16,6 +17,15 @@ class HousesController < ApplicationController
     @house = House.find(params[:id])
     @booking = Booking.new
     authorize @house
+    # the `geocoded` scope filters only houses with coordinates (latitude & longitude)
+    # these are called in the mapbox controller
+  @markers = [{
+    lat: @house.latitude,
+    lng: @house.longitude,
+    info_window: render_to_string(partial: "info_window",
+      locals: { house: @house }),
+      image_url: helpers.asset_url("apple-touch-icon.png")
+            }]
   end
 
   def new

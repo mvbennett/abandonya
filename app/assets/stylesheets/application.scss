@@ -7,6 +7,9 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "mapbox-gl/dist/mapbox-gl.css";
+@import "@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder";
+
 
 // Your CSS partials
 @import "components/index";
@@ -16,3 +19,6 @@
 @import "bookings/index";
 @import "houses/show";
 @import "houses/index";
+
+// delete later, needs to be in component index
+@import "components/mapbox";
