@@ -1,3 +1,5 @@
+@import "show";
+
 .search-container {
   width: 100%;
 }
@@ -6,6 +8,9 @@
   width: 26%;
 }
 
+h2 {
+  margin-top: 10px !important;
+  }
 
 
 // can probably delete:
