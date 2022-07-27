@@ -1,7 +1,21 @@
+@import "show";
+
 .search-container {
   width: 100%;
 }
 
 .search-field {
   width: 26%;
+}
+
+h2 {
+  margin-top: 10px !important;
+  }
+
+
+// can probably delete:
+a.add-a-house {
+  position: relative;
+  top: 20px;
+  left: 20px;
 }
