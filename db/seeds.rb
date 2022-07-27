@@ -28,7 +28,7 @@ ellie.save!
 
 puts 'makin houses...'
 # houses, and photo attachments
-seed_house = House.new(name: "seed house", address: "123 seedy st", haunted: 3, description: "Please make sure that your tetanus shots are up to date.", user_id: seedyboi.id)
+seed_house = House.new(name: "seed house", address: "Meguro-shinbashi Bridge", haunted: 3, description: "Please make sure that your tetanus shots are up to date.", user_id: seedyboi.id)
 seed_photo = URI.open('http://coffeeguymike.com/abandonya/rustyStairs.jpg')
 seed_house.photo.attach(io: seed_photo, filename: 'stairs.jpg', content_type: 'image/jpg')
 seed_house.save
@@ -39,20 +39,29 @@ mikes_photo = URI.open('http://coffeeguymike.com/abandonya/kinugawaHouse.jpg')
 mikes_house.photo.attach(io: mikes_photo, filename: 'kinu.jpg', content_type: 'image/jpg')
 mikes_house.save!
 
-maries_house = House.new(name: "hayataro's lair", address: '69 bourbon way', haunted: 2, description: "Beware of dog, protect your ankles. Check futon for dampness before lying down." , user_id: marie.id)
+maries_house = House.new(name: "hayataro's lair", address: '4400 Paralee Dr, Louisville, KY 40272', haunted: 2, description: "Beware of dog, protect your ankles. Check futon for dampness before lying down." , user_id: marie.id)
 maries_photo = URI.open('http://coffeeguymike.com/abandonya/octodadDesat.jpg')
 maries_house.photo.attach(io: maries_photo, filename: 'octo.jpg', content_type: 'image/jpg')
 maries_house.save!
 
-hamishs_house = House.new(name: "floor mattress", address: '420 straya mate', haunted: 5, description: "Perfect bachelor pad.", user_id: hamish.id)
+hamishs_house = House.new(name: "floor mattress", address: 'Granola St, Ararat VIC 3377', haunted: 5, description: "Perfect bachelor pad.", user_id: hamish.id)
 hamishs_photo = URI.open('http://coffeeguymike.com/abandonya/stiltsWeirdCurve.jpg')
 hamishs_house.photo.attach(io: hamishs_photo, filename: 'stilts.jpg', content_type: 'image/jpg')
 hamishs_house.save!
 
-ellies_house = House.new(name: "Hyrule's castle", address: '900 rue effrayante', haunted: 1, description: "Very spacious and quiet. You'll enjoy exploring all the unused rooms undisturbed. There's a big black cloud of angry miasma floating above it but it's cool don't worry too much about it. Also please bring a sword and at least one red potion (just a precaution...)
+ellies_house = House.new(name: "Hyrule's castle", address: '3724 Mc Tavish St, Montreal', haunted: 1, description: "Very spacious and quiet. You'll enjoy exploring all the unused rooms undisturbed. There's a big black cloud of angry miasma floating above it but it's cool don't worry too much about it. Also please bring a sword and at least one red potion (just a precaution...)
 ", user_id: ellie.id)
 ellies_photo = URI.open('http://coffeeguymike.com/abandonya/noge.jpg')
 ellies_house.photo.attach(io: ellies_photo, filename: 'noge.jpg', content_type: 'image/jpg')
 ellies_house.save!
 
 puts 'all done!'
+
+# remaining pics:
+# 'http://coffeeguymike.com/abandonya/lab.jpg'
+# 'http://coffeeguymike.com/abandonya/machiya.jpg'
+# 'http://coffeeguymike.com/abandonya/motel.jpg'
+# 'http://coffeeguymike.com/abandonya/negishi.jpg'
+# 'http://coffeeguymike.com/abandonya/snack.jpg'
+# 'http://coffeeguymike.com/abandonya/usaya.jpg'
+# 'http://coffeeguymike.com/abandonya/yoshida.jpg'
