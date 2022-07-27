@@ -1,3 +1,33 @@
 .house-details img {
   height: 20px;
 }
+
+a.go-back {
+  position: relative;
+  top: 20px;
+  left: 20px;
+}
+
+.house-title {
+  margin: 0 auto 25px auto;
+}
+
+.img-show {
+  border-radius: 4px;
+  width: 100%;
+}
+
+.house-details {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  font-size: 20px;
+  background-color: $card-background;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.input-fields {
+  font-size: 12px;
+  text-align: left;
+}

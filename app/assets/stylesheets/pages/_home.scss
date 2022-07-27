@@ -19,6 +19,12 @@ p {
   margin-top: 40px;
 }
 
+body {
+  background-image: image_url('background.png');
+  background-color: whitesmoke;
+}
+
+
 //carousel start
 #carouselExampleIndicators {
   margin: 0 auto;
