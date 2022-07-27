@@ -12,10 +12,12 @@
   background-color: $approved-background;
   box-shadow: 2px 2px 10px lightgrey;
 }
+
 .booking-card.pending {
   background-color: $pending-background;
   box-shadow: 2px 2px 10px lightgrey;
 }
+
 .booking-card.completed {
   background-color: $completed-background;
   box-shadow: 2px 2px 10px lightgrey;
@@ -33,9 +35,11 @@
   width: 30%;
   height: 30%;
 }
+
 .mybooking-housedescription {
   padding: 0;
 }
+
 ul.mybooking-ul {
   list-style: none;
   text-align: left;
