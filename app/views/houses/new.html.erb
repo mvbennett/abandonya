@@ -8,12 +8,26 @@
   <%= simple_form_for(@house) do |f| %>
     <%= f.input :name, maxlength: 21 %>
     <%= f.input :address %>
-    <%= f.input :haunted, as: :radio_buttons, collection: %w'1 2 3 4 5' %>
+      <div class="star-rating">
+      <h5>Haunted level</h5>
+        <% 5.times do |i| %>
+      <input type="radio" name="house[haunted]" value="<%= i + 1 %>" <%= "checked" if i == 2 %> />
+    <% end %>
+    </div>
     <%= f.input :description %>
     <%= f.input :photo, as: :file %>
     <%= f.submit %>
   <% end %>
+    <%# <%= f.input :haunted, as: :radio_buttons, collection: %w'1 2 3 4 5'%>
 
 </div>
 
 <%= render :partial => 'shared/footer' %>
+
+<%# <form class="star-rating">
+  <input type="radio" name="review[rating]" value="1" />
+  <input type="radio" name="review[rating]" value="2" />
+  <input type="radio" name="review[rating]" value="3" checked />
+  <input type="radio" name="review[rating]" value="4" />
+  <input type="radio" name="review[rating]" value="5" />
+</form> %>
