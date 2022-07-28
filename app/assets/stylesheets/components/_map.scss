@@ -7,9 +7,15 @@
   font-family: "Open Sans", sans-serif;
 }
 
+.mapboxgl-map {
+  border-radius: 4px;
+}
+
 .mapbox {
   margin-top: 16px;
 }
+
+
 
 // this doesn't seem to actually do anything:
 // .container-mapbox {
