@@ -20,10 +20,9 @@
     <div class="col-4 house-info">
       <ul class="house-details">
         <li>
-          Address: <%= @house.address %>
+          <%= image_tag('ghostpin.svg') %> <%= @house.address %>
         </li>
         <li>
-          Haunting level:
           <% remaining = 5 - @house.haunted %>
           <% @house.haunted.times do %>
             <%= image_tag("lilGhostBlk.svg") %>
@@ -33,7 +32,7 @@
           <% end %>
         </li>
         <li>
-          Comment from owner: <%= @house.description %>
+          <%= image_tag('openquotes.svg') %><%= @house.description %><%= image_tag('closequotes.svg') %>
         </li>
       </ul>
 
