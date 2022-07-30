@@ -25,9 +25,15 @@
             <h2>
               <%= truncate(house.name, length: 21) %>
             </h2>
-            <p>
-              <%= truncate(house.address, length: 40) %>
-            </p>
+            <div class="house-card-info">
+            <div class="col-3"></div>
+            <div class="house-address col-6">
+              <%= truncate(house.address, length: 20) %>
+            </div>
+            <div class="col-3">
+                ¥<%= house.price %>
+            </div>
+            </div>
           </div>
         </div>
       </div>

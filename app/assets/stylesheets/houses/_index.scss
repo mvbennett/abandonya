@@ -19,3 +19,11 @@ a.add-a-house {
   top: 20px;
   left: 20px;
 }
+
+.house-card-info {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 8px 4px 8px;
+  font-size: 20px;
+
+}

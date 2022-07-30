@@ -34,6 +34,9 @@
         <li>
           <%= image_tag('openquotes.svg') %><%= @house.description %><%= image_tag('closequotes.svg') %>
         </li>
+        <li>
+          <div class="price-break">¥ <%= @house.price %> /<%= image_tag("crescent.svg") %> </div>
+        </li>
       </ul>
 
       <%# if/else to show booking form or update and delete buttons depending on user %>

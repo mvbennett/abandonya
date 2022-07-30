@@ -24,7 +24,7 @@ class HousesController < ApplicationController
     lng: @house.longitude,
     info_window: render_to_string(partial: "info_window",
       locals: { house: @house }),
-      image_url: helpers.asset_url("apple-touch-icon.png")
+      image_url: helpers.asset_url("lilGhostYt.png")
             }]
   end
 
@@ -77,6 +77,6 @@ class HousesController < ApplicationController
   private
 
   def house_params
-    params.require(:house).permit(:name, :address, :haunted, :photo)
+    params.require(:house).permit(:name, :address, :haunted, :photo, :price)
   end
 end
