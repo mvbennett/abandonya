@@ -29,7 +29,8 @@
                 <%= booking.start_time.strftime('%m/%d/%Y') %> to <%= booking.end_time.strftime('%m/%d/%Y') %>
               </li>
               <li>
-                ¥<%= booking.house.price %> per night
+                <% total = ((booking.house.price * (booking.end_time - booking.start_time)) / 86400).to_i %>
+                ¥<%= total %> total
               </li>
             </ul>
           </div>
@@ -123,7 +124,8 @@
                 <%= booking.start_time.strftime('%m/%d/%Y') %> to <%= booking.end_time.strftime('%m/%d/%Y') %>
               </li>
               <li>
-                ¥<%= booking.house.price %> per night
+                <% total = ((booking.house.price * (booking.end_time - booking.start_time)) / 86400).to_i %>
+                ¥<%= total %> total
               </li>
             </ul>
           </div>
