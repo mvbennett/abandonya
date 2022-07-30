@@ -47,6 +47,23 @@ const addToggle = () => {
   };
 
   completedButton.addEventListener("click", toggleLenderCompleted);
+
+  const renterApprovedBookings = document.querySelector(".renter-approved");
+  const renterApprovedButton = document.getElementById("renter-approved-button");
+
+  const toggleRenterApproved = () => {
+    console.log('clicked');
+    const isHidden = renterApprovedBookings.style.display === "none";
+    if (isHidden) {
+      renterApprovedBookings.style.display = "block";
+      renterApprovedButton.innerText = "Approved ▲";
+    } else {
+      renterApprovedBookings.style.display = "none";
+      renterApprovedButton.innerText = "Approved ▼";
+    };
+  };
+
+  renterApprovedButton.addEventListener("click", toggleRenterApproved);
 }
 
 export { addToggle }
