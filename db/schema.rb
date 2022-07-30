@@ -71,17 +71,6 @@ ActiveRecord::Schema.define(version: 2022_07_30_022729) do
     t.index ["user_id"], name: "index_houses_on_user_id"
   end
 
-  create_table "notifications", force: :cascade do |t|
-    t.integer "recipient_id"
-    t.integer "actor_id"
-    t.datetime "read_at"
-    t.string "action"
-    t.integer "notifiable_id"
-    t.string "notifiable_type"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
