@@ -2,6 +2,8 @@
   "name": "sutaya",
   "private": true,
   "dependencies": {
+    "@hotwired/stimulus": "^3.1.0",
+    "@hotwired/stimulus-webpack-helpers": "^1.0.1",
     "@mapbox/mapbox-gl-geocoder": "^5.0.1",
     "@popperjs/core": "^2.11.5",
     "@rails/actioncable": "^6.0.0",
