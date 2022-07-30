@@ -24,7 +24,7 @@ class HousesController < ApplicationController
     lng: @house.longitude,
     info_window: render_to_string(partial: "info_window",
       locals: { house: @house }),
-      image_url: helpers.asset_url("apple-touch-icon.png")
+      image_url: helpers.asset_url("lilGhostYt.png")
             }]
   end
 
