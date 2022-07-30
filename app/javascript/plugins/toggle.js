@@ -4,8 +4,6 @@ const addToggle = () => {
 
   const toggleLenderPending = () => {
     const isHidden = pending.style.display === "none";
-    console.log("toggle lender pending");
-    console.log(isHidden);
     if (isHidden) {
       pending.style.display = "block";
       lenderButton.innerText = "Awaiting Response ▲";
@@ -23,8 +21,6 @@ const addToggle = () => {
 
   const toggleLenderUpcoming = () => {
     const isHidden = upcomingBookings.style.display === "none";
-    console.log("toggle lender upcoming")
-    console.log(isHidden);
     if (isHidden) {
       upcomingBookings.style.display = "block";
       upcomingButton.innerText = "Upcoming Bookings ▲";
@@ -35,6 +31,22 @@ const addToggle = () => {
   };
 
   upcomingButton.addEventListener("click", toggleLenderUpcoming);
+
+  const completedBookings = document.querySelector(".completed-bookings");
+  const completedButton = document.getElementById("completed-button");
+
+  const toggleLenderCompleted = () => {
+    const isHidden = completedBookings.style.display === "none";
+    if (isHidden) {
+      completedBookings.style.display = "block";
+      completedButton.innerText = "Completed Bookings ▲";
+    } else {
+      completedBookings.style.display = "none";
+      completedButton.innerText = "Completed Bookings ▼";
+    };
+  };
+
+  completedButton.addEventListener("click", toggleLenderCompleted);
 }
 
 export { addToggle }
