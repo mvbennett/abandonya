@@ -10,7 +10,6 @@
       <div class="row remove-margintop">
         <div class="col-8 img-description">
           <div class="mybooking-img">
-          <%# make the image smaller maybe? %>
             <% if booking.house.photo.key.nil? %>
               <img src="https://picsum.photos/400/300" alt="totally a house">
             <% else %>
@@ -35,12 +34,12 @@
             </ul>
           </div>
         </div>
-        <div class="col-2">
+        <div class="col-lg-2 col-sm-4">
           <div class="booking-status">
             <%= booking.status %>
           </div>
         </div>
-        <div class="col-2">
+        <div class="col-lg-2 col-sm-8">
           <div class="booking-button">
             <%= link_to "Cancel", houses_path, class: 'btn my-2 my-sm-0 cancel-btn' %>
           </div>
@@ -57,9 +56,8 @@
   <%  @pending_bookings.each do |booking| %>
     <div class="booking-card pending">
       <div class="row remove-margintop">
-        <div class="col-8 img-description">
+        <div class="col-lg-8 col-sm-12 img-description">
           <div class="mybooking-img">
-          <%# make the image smaller maybe? %>
             <% if booking.house.photo.key.nil? %>
               <img src="https://picsum.photos/400/300" alt="totally a house">
             <% else %>
@@ -84,12 +82,12 @@
             </ul>
           </div>
         </div>
-        <div class="col-2">
+        <div class=" col-sm-4 col-lg-2">
           <div class="booking-status">
             <%= booking.status %>
           </div>
         </div>
-        <div class="col-2">
+        <div class="col-sm-8 col-lg-2">
           <div class="booking-button">
             <%= link_to "Cancel", houses_path, class: 'btn my-2 my-sm-0 cancel-btn' %>
           </div>
@@ -105,7 +103,6 @@
       <div class="row remove-margintop">
         <div class="col-8 img-description">
           <div class="mybooking-img">
-          <%# make the image smaller maybe? %>
             <% if booking.house.photo.key.nil? %>
               <img src="https://picsum.photos/400/300" alt="totally a house">
             <% else %>
@@ -130,12 +127,12 @@
             </ul>
           </div>
         </div>
-        <div class="col-2">
+        <div class="col-lg-2 col-sm-4">
           <div class="booking-status">
             <%= booking.status %>
           </div>
         </div>
-        <div class="col-2">
+        <div class="col-lg-2 col-sm-8">
           <div class="booking-button">
             <%= link_to "Cancel", houses_path, class: 'btn my-2 my-sm-0 cancel-btn' %>
           </div>

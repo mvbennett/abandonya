@@ -11,7 +11,7 @@
       <% end %>
     </div>
     <% @houses.each do |house| %>
-      <div class="class col-4 mt-3 mb-4">
+      <div class="class col-lg-4 col-sm-6 mt-3 mb-4">
         <div class="card-product">
         <%= link_to house_path(house) do %>
           <% if house.photo.key.nil? %>
