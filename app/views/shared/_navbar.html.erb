@@ -2,7 +2,7 @@
 <nav class="navbar navbar-light">
   <%# rail's link helper, we can wrap with do and class is applied with a colon %>
   <%= link_to root_path, class: 'navbar-brand' do %>
-    <img src="http://coffeeguymike.com/abandonya/spoopyGhostGryRoof-01.png" alt="Spoopy Logo" class="spoopy-logo">
+    <%= image_tag('spoopyGhostGryRoof-01.png', alt: "Spoopy Logo", class: "spoopy-logo") %>
     <span class="title">abandonya</span>
   <% end %>
   <%# if statement to get a sign out button to show instead when logged in %>
