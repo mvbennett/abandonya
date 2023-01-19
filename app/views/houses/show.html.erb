@@ -20,22 +20,22 @@
     <div class="col-lg-4 col-sm-12 house-info">
       <ul class="house-details">
         <li>
-          <%= image_tag('ghostpin.svg'), alt: 'house location' %> <%= @house.address %>
+          <%= image_tag('ghostpin.svg', alt: 'house location') %> <%= @house.address %>
         </li>
         <li>
           <% remaining = 5 - @house.haunted %>
           <% @house.haunted.times do %>
-            <%= image_tag("lilGhostBlk.svg"), alt: 'sppoky level' %>
+            <%= image_tag("lilGhostBlk.svg", alt: 'sppoky level') %>
           <% end %>
           <% remaining.times do %>
-            <%= image_tag("lilGhostBlk.svg", class: 'ghostpacity'), alt: 'remaining spookiness' %>
+            <%= image_tag("lilGhostBlk.svg", class: 'ghostpacity', alt: 'remaining spookiness') %>
           <% end %>
         </li>
         <li>
-          <%= image_tag('openquotes.svg'), alt: 'house description follows' %><%= @house.description %><%= image_tag('closequotes.svg'), alt: 'house description ends' %>
+          <%= image_tag('openquotes.svg', alt: 'house description follows') %><%= @house.description %><%= image_tag('closequotes.svg', alt: 'house description ends') %>
         </li>
         <li>
-          <div class="price-break">¥ <%= @house.price %> /<%= image_tag("crescent.svg"), alt: 'per night' %> </div>
+          <div class="price-break">¥ <%= @house.price %> /<%= image_tag("crescent.svg", alt: 'per night') %> </div>
         </li>
       </ul>
 
