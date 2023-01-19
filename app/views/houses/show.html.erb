@@ -11,7 +11,7 @@
         <% if @house.photo.key.nil? %>
           <img src="https://picsum.photos/400/300" alt="totally a house">
         <% else %>
-          <%= cl_image_tag @house.photo.key, crop: :fill, class: 'img-show' %>
+          <%= cl_image_tag @house.photo.key, crop: :fill, class: 'img-show', alt: @house.name %>
         <% end %>
       </div>
     </div>
@@ -20,22 +20,22 @@
     <div class="col-lg-4 col-sm-12 house-info">
       <ul class="house-details">
         <li>
-          <%= image_tag('ghostpin.svg') %> <%= @house.address %>
+          <%= image_tag('ghostpin.svg'), alt: 'house location' %> <%= @house.address %>
         </li>
         <li>
           <% remaining = 5 - @house.haunted %>
           <% @house.haunted.times do %>
-            <%= image_tag("lilGhostBlk.svg") %>
+            <%= image_tag("lilGhostBlk.svg"), alt: 'sppoky level' %>
           <% end %>
           <% remaining.times do %>
-            <%= image_tag("lilGhostBlk.svg", class: 'ghostpacity') %>
+            <%= image_tag("lilGhostBlk.svg", class: 'ghostpacity'), alt: 'remaining spookiness' %>
           <% end %>
         </li>
         <li>
-          <%= image_tag('openquotes.svg') %><%= @house.description %><%= image_tag('closequotes.svg') %>
+          <%= image_tag('openquotes.svg'), alt: 'house description follows' %><%= @house.description %><%= image_tag('closequotes.svg'), alt: 'house description ends' %>
         </li>
         <li>
-          <div class="price-break">¥ <%= @house.price %> /<%= image_tag("crescent.svg") %> </div>
+          <div class="price-break">¥ <%= @house.price %> /<%= image_tag("crescent.svg"), alt: 'per night' %> </div>
         </li>
       </ul>
 
